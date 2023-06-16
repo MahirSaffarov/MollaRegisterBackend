@@ -1,0 +1,95 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "SignUp";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SignUp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f6f6;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+            .container h2 {
+                text-align: center;
+                color: #333333;
+                margin-bottom: 20px;
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #555555;
+            }
+
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                color: #333333;
+            }
+
+            .form-group input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #4285f4;
+                color: #ffffff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+                .form-group input[type="submit"]:hover {
+                    background-color: #3367d6;
+                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create an Account</h2>
+        <form method="post" asp-action="SignUp">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input asp-for="UserName"  id="username" name="UserName" >
+            </div>
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input asp-for="FullName" id="fullname" name="FullName" >
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input asp-for="Email" id="email" name="Email" >
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input asp-for="Password" id="password" name="Password" >
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input asp-for="CPassword" id="confirm_password" name="CPassword" >
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register">
+            </div>
+            <div asp-validation-summary="All"></div>
+        </form>
+    </div>
+</body>
+</html>
